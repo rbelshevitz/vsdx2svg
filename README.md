@@ -8,7 +8,7 @@ Requires Go 1.22 or newer.
 
 ```bash
 go mod download
-go build -o vsdx2svg ./cmd/vsdx2svg
+go build -trimpath -ldflags="-s -w" -o vsdx2svg ./cmd/vsdx2svg
 ```
 
 ## Usage
@@ -23,11 +23,5 @@ Options:
 - `-no-rounding` — disable rounded corners from Visio shape settings
 
 The generated SVG keeps shapes, text, fills, and strokes as separate objects for editing in Inkscape.
-
-## Test
-
-```bash
-go test ./...
-```
 
 MIT License.
